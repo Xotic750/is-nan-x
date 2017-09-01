@@ -21,6 +21,8 @@ if (typeof module === 'object' && module.exports) {
   numberIsNaN = returnExports;
 }
 
+var itHasWindow = typeof window === 'undefined' ? xit : it;
+
 describe('numberIsNaN', function () {
   it('is a function', function () {
     expect(typeof numberIsNaN).toBe('function');
@@ -57,5 +59,9 @@ describe('numberIsNaN', function () {
 
   it('NaN', function () {
     expect(numberIsNaN(NaN)).toBe(true, 'NaN is NaN');
+  });
+
+  itHasWindow('Work with window', function () {
+    expect(numberIsNaN(window)).toBe(false, 'window is not NaN');
   });
 });

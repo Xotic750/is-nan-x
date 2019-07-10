@@ -1,13 +1,13 @@
 /*!
 {
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-10T10:54:03.517Z",
+  "date": "2019-07-10T11:37:49.324Z",
   "describe": "",
   "description": "ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.",
   "file": "is-nan-x.js",
-  "hash": "1bf95ac7116f2d9fa248",
+  "hash": "cac0552a2eab75f86765",
   "license": "MIT",
-  "version": "2.0.0"
+  "version": "2.0.1"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -129,14 +129,10 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 
-/**
- * @file ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.
- * @version 2.0.0
- * @author Xotic750 <Xotic750@gmail.com>
- * @copyright  Xotic750
- * @license {@link <https://opensource.org/licenses/MIT> MIT}
- * @module is-nan-x
- */
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isNaN;
 
 /**
  * This method determines whether the passed value is NaN and its type is
@@ -146,10 +142,10 @@ return /******/ (function(modules) { // webpackBootstrap
  * @returns {boolean} `true` if the given value is NaN and its type is Number;
  *  otherwise, `false`.
  */
-module.exports = function isNaN(value) {
+function isNaN(value) {
   /* eslint-disable-next-line no-self-compare */
   return value !== value;
-};
+}
 
 /***/ })
 /******/ ]);

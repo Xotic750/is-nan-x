@@ -21,46 +21,45 @@
 <a name="module_is-nan-x"></a>
 
 ## is-nan-x
+
 ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.
 
-**Version**: 1.0.3  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
 <a name="exp_module_is-nan-x--module.exports"></a>
 
 ### `module.exports(value)` ⇒ <code>boolean</code> ⏏
+
 This method determines whether the passed value is NaN and its type is
 `Number`. It is a more robust version of the original, global isNaN().
 
 **Kind**: Exported function  
 **Returns**: <code>boolean</code> - `true` if the given value is NaN and its type is Number;
- otherwise, `false`.  
+otherwise, `false`.
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type            | Description                     |
+| ----- | --------------- | ------------------------------- |
 | value | <code>\*</code> | The value to be tested for NaN. |
 
-**Example**  
-```js
-var numberIsNaN = require('is-nan-x');
+**Example**
 
-numberIsNaN(NaN);        // true
-numberIsNaN(Number.NaN); // true
-numberIsNaN(0 / 0);      // true
+```js
+import numberIsNaN from 'is-nan-x';
+
+console.log(numberIsNaN(NaN)); // true
+console.log(numberIsNaN(Number.NaN)); // true
+console.log(numberIsNaN(0 / 0)); // true
 
 // e.g. these would have been true with global isNaN()
-numberIsNaN('NaN');      // false
-numberIsNaN(undefined);  // false
-numberIsNaN({});         // false
-numberIsNaN('blabla');   // false
+console.log(numberIsNaN('NaN')); // false
+console.log(numberIsNaN(undefined)); // false
+console.log(numberIsNaN({}); // false
+console.log(numberIsNaN('blabla')); // false
 
 // These all return false
-numberIsNaN(true);
-numberIsNaN(null);
-numberIsNaN(37);
-numberIsNaN('37');
-numberIsNaN('37.37');
-numberIsNaN('');
-numberIsNaN(' ');
+console.log(numberIsNaN(true));
+console.log(numberIsNaN(null));
+console.log(numberIsNaN(37));
+console.log(numberIsNaN('37'));
+console.log(numberIsNaN('37.37'));
+console.log(numberIsNaN(''));
+console.log(numberIsNaN(' '));
 ```

@@ -1,34 +1,16 @@
-'use strict';
+import noop from 'lodash/noop';
+import numberIsNaN from 'src/is-nan-x';
 
-var numberIsNaN;
-if (typeof module === 'object' && module.exports) {
-  require('es5-shim');
-  require('es5-shim/es5-sham');
-  if (typeof JSON === 'undefined') {
-    JSON = {};
-  }
-  require('json3').runInContext(null, JSON);
-  require('es6-shim');
-  var es7 = require('es7-shim');
-  Object.keys(es7).forEach(function (key) {
-    var obj = es7[key];
-    if (typeof obj.shim === 'function') {
-      obj.shim();
-    }
-  });
-  numberIsNaN = require('../../index.js');
-} else {
-  numberIsNaN = returnExports;
-}
+const itHasWindow = typeof window === 'undefined' ? xit : it;
 
-var itHasWindow = typeof window === 'undefined' ? xit : it;
-
-describe('numberIsNaN', function () {
-  it('is a function', function () {
+describe('numberIsNaN', function() {
+  it('is a function', function() {
+    expect.assertions(1);
     expect(typeof numberIsNaN).toBe('function');
   });
 
-  it('primitives', function () {
+  it('primitives', function() {
+    expect.assertions(9);
     expect(numberIsNaN()).toBe(false, 'undefined is not NaN');
     expect(numberIsNaN(null)).toBe(false, 'null is not NaN');
     expect(numberIsNaN(false)).toBe(false, 'false is not NaN');
@@ -40,28 +22,32 @@ describe('numberIsNaN', function () {
     expect(numberIsNaN('NaN')).toBe(false, 'string NaN is not NaN');
   });
 
-  it('objects', function () {
+  it('objects', function() {
+    expect.assertions(3);
     expect(numberIsNaN([])).toBe(false, 'array is not NaN');
     expect(numberIsNaN({})).toBe(false, 'object is not NaN');
-    expect(numberIsNaN(function () {})).toBe(false, 'function is not NaN');
+    expect(numberIsNaN(noop)).toBe(false, 'function is not NaN');
   });
 
-  it('valueOf', function () {
-    var obj = {
-      valueOf: function () {
+  it('valueOf', function() {
+    expect.assertions(2);
+    const obj = {
+      valueOf() {
         return NaN;
-      }
+      },
     };
 
     expect(numberIsNaN(Number(obj))).toBe(true, 'object with valueOf of NaN, converted to Number, is NaN');
     expect(numberIsNaN(obj)).toBe(false, 'object with valueOf of NaN is not NaN');
   });
 
-  it('NaN', function () {
+  it('naN', function() {
+    expect.assertions(1);
     expect(numberIsNaN(NaN)).toBe(true, 'NaN is NaN');
   });
 
-  itHasWindow('Work with window', function () {
+  itHasWindow('Work with window', function() {
+    expect.assertions(1);
     expect(numberIsNaN(window)).toBe(false, 'window is not NaN');
   });
 });

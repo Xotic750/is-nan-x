@@ -2,11 +2,11 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-16T20:53:10.191Z",
+  "date": "2019-07-17T12:40:35.301Z",
   "describe": "",
   "description": "ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.",
   "file": "is-nan-x.js",
-  "hash": "a3200608ec6628009b5c",
+  "hash": "bd51c37a153af57104ff",
   "license": "MIT",
   "version": "2.0.12"
 }
@@ -129,7 +129,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return isNaN; });
 /**
  * This method determines whether the passed value is NaN and its type is
  * `Number`. It is a more robust version of the original, global isNaN().
@@ -138,10 +137,12 @@ __webpack_require__.r(__webpack_exports__);
  * @returns {boolean} `true` if the given value is NaN and its type is Number;
  *  otherwise, `false`.
  */
-function isNaN(value) {
+var isNaN = function isNaN(value) {
   /* eslint-disable-next-line no-self-compare */
   return value !== value;
-}
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (isNaN);
 
 
 

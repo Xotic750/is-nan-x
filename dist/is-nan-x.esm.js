@@ -6,9 +6,11 @@
  * @returns {boolean} `true` if the given value is NaN and its type is Number;
  *  otherwise, `false`.
  */
-export default function isNaN(value) {
+var isNaN = function isNaN(value) {
   /* eslint-disable-next-line no-self-compare */
   return value !== value;
-}
+};
+
+export default isNaN;
 
 //# sourceMappingURL=is-nan-x.esm.js.map

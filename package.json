@@ -1,6 +1,6 @@
 {
   "name": "is-nan-x",
-  "version": "2.0.22",
+  "version": "2.0.23",
   "description": "ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.",
   "homepage": "https://github.com/Xotic750/is-nan-x",
   "author": {
@@ -22,6 +22,7 @@
   ],
   "module": "dist/is-nan-x.esm.js",
   "main": "dist/is-nan-x.js",
+  "jsdelivr": "dist/is-nan-x.min.js",
   "scripts": {
     "build:esm": "mkdirp dist && babel -s true --env-name esm src/is-nan-x.js -o dist/is-nan-x.esm.js",
     "build:base": "webpack --bail --progress --profile --colors",

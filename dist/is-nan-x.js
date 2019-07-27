@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-27T13:12:50.581Z",
+  "date": "2019-07-27T20:55:42.889Z",
   "describe": "",
   "description": "ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.",
   "file": "is-nan-x.js",

@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-08-14T13:31:22.083Z",
+  "date": "2019-08-14T14:23:19.967Z",
   "describe": "",
   "description": "ES6-compliant shim for Number.isNaN - the global isNaN returns false positives.",
   "file": "is-nan-x.js",
   "hash": "37476c682c14de6a7950",
   "license": "MIT",
-  "version": "2.0.30"
+  "version": "2.1.0"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
